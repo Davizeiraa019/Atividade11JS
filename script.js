@@ -46,26 +46,62 @@ console.log('o', computador.patrimonio, 'possui o processaor', computador.proces
 
 const carrinho = [
     {
-        nome : 'Intel i9 14th',
-        preco : 3000,
-        quantidade : 2,
+        nome: 'Intel i9 14th',
+        preco: 3000,
+        quantidade: 2,
     },
 
     {
-        nome : 'Fone',
-        preco : 500,
-        quantidade : 2,
+        nome: 'Fone',
+        preco: 500,
+        quantidade: 2,
     },
 
     {
-        nome : 'Monitor',
-        preco : 1000,
-        quantidade : 1,
+        nome: 'Monitor',
+        preco: 1000,
+        quantidade: 1,
     },
 
     {
-        nome : 'Mouse',
-        preco : 600,
-        quantidade : 3,
+        nome: 'Mouse',
+        preco: 600,
+        quantidade: 3,
     }
 ]
+let valorTotal = 0;
+
+for (let contador = 0; contador <= 3; contador = contador + 1) {
+    valorTotal = valorTotal + (carrinho[contador].preco * carrinho[contador].quantidade);
+}
+console.log('R$', valorTotal, 'reais');
+
+//     Exercício 4: Perfil de Usuário e Permissões (Objeto com Listas)
+// Cenário: No sistema de autenticação da empresa, cada usuário possui dados básicos e uma lista de módulos que tem permissão para acessar.
+// Tarefas:
+// Crie um objeto chamado usuario com as propriedades: nome (texto), cargo (texto) e permissoes 
+// (uma lista de textos, como ["vendas", "relatorios", "estoque"]).
+// Exiba no console o nome e o cargo do usuário.
+// Utilizando um loop (for), percorra apenas a lista permissoes que está dentro do objeto e imprima cada permissão no formato: 
+// "- Acesso liberado: [permissao]".
+// Ainda dentro do loop, verifique (usando if) se o usuário possui a permissão "admin". Caso tenha, exiba um alerta no console: 
+// "Atenção: Usuário com privilégios totais!".
+
+
+const usuario = {
+    nome: 'Davi',
+    cargo: 'Gestor de TI',
+    permissoes: ['vendas', 'relatorios', 'estoque']
+};
+
+console.log(usuario.nome);
+console.log(usuario.cargo);
+
+for (let contador = 0; contador < usuario.permissoes.length; contador = contador + 1) {
+
+    console.log('- Acesso liberado: ' + usuario.permissoes[contador]);
+
+    if (usuario.permissoes[contador] === 'admin') {
+        console.log('Atenção: Usuário com privilégios totais!');
+    }
+}
